@@ -8,24 +8,14 @@ import {
 } from "../controllers/taskController";
 const router = Router();
 
-router.get("/list", (req: Request, res: Response) => {
-    getAllTasks(req, res);
-});
+router.get("/list", getAllTasks);
 
-router.get("/detail/:id", (req: Request, res: Response) => {
-    getSingletask(req, res);
-});
+router.get("/detail/:id", getSingletask);
 
-router.post("/create", (req: Request, res: Response) => {
-    createNewTask(req, res);
-});
+router.post("/create", createNewTask);
 
-router.delete("/delete/:id", (req: Request, res: Response) => {
-    deleteTask(req, res);
-});
+router.delete("/delete/:id", deleteTask);
 
-router.put("/update/:id", (req: Request, res: Response) => {
-    updateTask(req, res);
-});
+router.put("/update/:id", updateTask);
 
 export default router;
