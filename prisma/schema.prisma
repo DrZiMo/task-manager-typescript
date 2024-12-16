@@ -7,10 +7,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model users {
+enum TaskStatus {
+  completed
+  pending
+  in_progress
+}
+
+model tasks {
   id          Int        @id @default(autoincrement())
-  username    String
-  password    String
+  // username    String
+  // password    String
+  // phone       String?
+  // created_at  DateTime    @default(now())
+  // updated_at  DateTime    @updatedAt
+  name        String
+  description String
+  dueDate     String
+  status      TaskStatus
   created_at  DateTime    @default(now())
   updated_at  DateTime    @updatedAt
 }
