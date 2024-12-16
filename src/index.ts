@@ -5,6 +5,8 @@ import router from "../routes/taskRoute";
 const app = express();
 dotenv.config()
 
+app.use(express.json())
+
 app.use("/tasks", router)
 
 // listening to port
